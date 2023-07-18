@@ -27,7 +27,7 @@ func main() {
 	for h := 0; h < M; h++ {
 		fmt.Fscanf(reader, "%d %d\n", &A, &B)
 		for i := A; i < B-1; i++ {
-			for j := 0; j < i; j-- {
+			for j := A; j < i; j-- {
 				if j == 0 {
 					break
 				}
