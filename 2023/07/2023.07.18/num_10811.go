@@ -26,13 +26,13 @@ func main() {
 
 	for h := 0; h < M; h++ {
 		fmt.Fscanf(reader, "%d %d\n", &A, &B)
-		for i := A; i < B-1; i++ {
-			for j := A; j < i; j-- {
-				if j == 0 {
-					break
-				}
-				slice[i] = slice[j]
-				slice[j] = slice[i]
+		A -= 1
+		B -= 1
+		for i := A; i < B; i++ {
+			for j := B; j > i; j-- {
+				tmp := slice[j-1]
+				slice[j-1] = slice[j]
+				slice[j] = tmp
 			}
 		}
 	}
