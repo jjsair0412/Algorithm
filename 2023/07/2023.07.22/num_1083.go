@@ -26,23 +26,28 @@ func main() {
 
 	fmt.Fscanf(reader, "%d\n", &S)
 
-	for {
-		if count != S {
-			for i := range slice {
-				if i+1 == len(slice) {
-					break
-				}
-				if slice[i] > slice[i+1] {
-					tmp := slice[i]
-					slice[i] = slice[i+1]
-					slice[i+1] = tmp
-				}
-			}
-		} else {
+	// 입력값 : 가동범위
+	// 1 : 2
+	// 2 : 4
+	// 3 : 6
+	// 4 : 8
+	// 9 : 10
+
+	for i := range slice {
+		if i+1 == len(slice) {
+			break
+		}
+		
+		if  {
 			break
 		}
 
-		count += 1
+		if slice[i] < slice[i+1] {
+			tmp := slice[i]
+			slice[i] = slice[i+1]
+			slice[i+1] = tmp
+			count += 2
+		}
 	}
 
 	for _, num := range slice {
